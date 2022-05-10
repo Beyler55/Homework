@@ -68,7 +68,7 @@ public class Program
 			sum+=arr[i];
 			counter++;
 		}
-		average=sum/counter;
+		average=(double)sum/(double)counter;
 		Console.WriteLine(average);
 	}
 }
