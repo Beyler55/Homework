@@ -1,0 +1,25 @@
+Task-Bir integer arrayi yaradın, daha sonra istifadəçidən yaşını soruşun, əgər istifadəçinin yaşı bu arrayda varsa true əks halda false çap edin
+
+
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		bool flag = false;
+		int[] arr = {6, 9, 14, 23, 8, 32, 21};
+		Console.WriteLine("Enter your age: ");
+		int age = Int32.Parse(Console.ReadLine());
+		foreach (int element in arr)
+		{
+			if (age == element)
+			{
+				flag = true;
+				break;
+			}
+		}
+
+		Console.WriteLine(flag);
+	}
+}
