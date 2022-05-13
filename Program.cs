@@ -1,40 +1,38 @@
 ﻿using System;
 
-public class Program
+namespace Methodtask2
 {
-
-    //Task - 1
-    //IsPrime metodu - parametr olaraq integer value qəbul edir.
-    //Göndərilmiş integer dəyərin sadə olub olmadığını qaytarır.
-    //Ədəd sadədirsə true, deyilsə false qayıtmalıdır
-    public static void Main()
+    class Program
     {
-        IsPrime(1);
-    }
-    public static void IsPrime(int number)
-    {
-        bool result = true;
-        int counter = 0;
-        if (number <= 1)
+        static void Main(string[] args)
         {
-            Console.WriteLine("This number is neither prime nor complex");
-        }
-        else
-        {
-            for (int i = 1; i < number; i++)
+            //Task - 2
+            //CalcAvg metodu -Göndərilmiş imtahanlar qiyməti siyahısına(integer array) əsasən
+            //həmin qiymətlərin ortalamasını qaytaran metod yazın.Main metodunda bu metodu call edib,
+            //burdan qayıdan dəyərə əsasən ortalama 60 - dan böyükdürsə console-da "məzun oldunuz"
+            //əks halda "məzun ola bilmədiniz" yazısı yazdırın
+            int[] arr = { 70, 70, 70, 200 };
+            CalcAvg(arr);
+            if (CalcAvg(arr) > 60)
             {
-                if (number % i == 0)
-                {
-                    Console.WriteLine();
-                    counter++;
-                    if (counter > 2)
-                    {
-                        result = false;
-                    }
-                    break;
-                }
+                Console.WriteLine("You have graduate");
             }
-            Console.WriteLine(result);
+            else
+            {
+                Console.WriteLine("You couldn't graduate");
+            }
+        }
+        static int CalcAvg(int[] arr)
+        {
+            int sum = 0;
+            int counter = 0;
+            foreach (int item in arr)
+            {
+                sum = sum + item;
+                counter++;
+            }
+            int average = sum / counter;
+            return average;
         }
     }
 }
