@@ -13,7 +13,6 @@ namespace Task
             string names = "Nurlan Faiq Emil Tural Yusif";
             string[] spl = names.Split(' ');
             string revname = "";
-            string temp = "";
             foreach (var item in spl)
             {
 
