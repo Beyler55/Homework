@@ -21,7 +21,7 @@ namespace Task
                     revname = revname + item[i];
 
                 }
-
+                revname=revname+" ";
             }
             return revname;
         }
