@@ -1,40 +1,37 @@
 ﻿using System;
-
-public class Program
+namespace task2
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 1,2,2,3,3,3 };
+            int maincounter = 1;
+            int mostusednumber = 0;
+            
 
-    //Task - 1
-    //IsPrime metodu - parametr olaraq integer value qəbul edir.
-    //Göndərilmiş integer dəyərin sadə olub olmadığını qaytarır.
-    //Ədəd sadədirsə true, deyilsə false qayıtmalıdır
-    public static void Main()
-    {
-        IsPrime(1);
-    }
-    public static void IsPrime(int number)
-    {
-        bool result = true;
-        int counter = 0;
-        if (number <= 1)
-        {
-            Console.WriteLine("This number is neither prime nor complex");
-        }
-        else
-        {
-            for (int i = 1; i < number; i++)
+            for (int i = 0; i < (array.Length - 1); i++)
             {
-                if (number % i == 0)
+                int subnumber = array[i];
+                int subcounter = 0;
+
+                for (int j = 0; j < array.Length; j++)
                 {
-                    Console.WriteLine();
-                    counter++;
-                    if (counter > 2)
+                    if (subnumber == array[j])
                     {
-                        result = false;
+                        subcounter++;
                     }
-                    break;
+                }
+
+                if (subcounter > maincounter)
+                {
+                    mostusednumber = subnumber;
+                    maincounter = subcounter;
                 }
             }
-            Console.WriteLine(result);
+
+            Console.WriteLine(mostusednumber);
         }
     }
 }
+
