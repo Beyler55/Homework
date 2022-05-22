@@ -1,37 +1,32 @@
 ﻿using System;
-namespace task2
+
+namespace arraysorttask
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] array = { 1,2,2,3,3,3 };
-            int maincounter = 1;
-            int mostusednumber = 0;
-            
-
-            for (int i = 0; i < (array.Length - 1); i++)
+            int[] array = { 5, 1, 3, 2, 4, 8 };
+            CustomSort(array);
+        }
+        static void CustomSort(int[] arr)
+        {
+            for (int i = 1; i < arr.Length; i++)
             {
-                int subnumber = array[i];
-                int subcounter = 0;
-
-                for (int j = 0; j < array.Length; j++)
+                for (int j = 0; j < arr.Length; j++)
                 {
-                    if (subnumber == array[j])
+                    int temp = arr[j];
+                    if (arr[i] < arr[j])
                     {
-                        subcounter++;
+                        arr[j] = arr[i];
+                        arr[i] = temp;
                     }
                 }
-
-                if (subcounter > maincounter)
-                {
-                    mostusednumber = subnumber;
-                    maincounter = subcounter;
-                }
             }
-
-            Console.WriteLine(mostusednumber);
+            foreach (var item in arr)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
-
